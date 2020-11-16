@@ -1,9 +1,16 @@
-openapi: "3.0.0"
+openapi: 3.0.0
 servers:
-  - url: http://localhost:8080/api
+  - url: 'http://localhost:8080/api'
 info:
   version: 1.0.0
   title: News API
+  contact:
+    name: Daniel Kocot
+    url: 'http://www.codecentric.de'
+    email: daniel.kocot@codecentric.de
+  license:
+    name: Apache 2.0
+  description: An API to provide news
 paths:
   /news:
     summary: Get list of latest gaming news
@@ -13,19 +20,18 @@ paths:
       summary: Get list of latest gaming news
       operationId: getNews
       responses:
-        "200":
+        '200':
           description: Expected response to a valid request
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ArticleList"
-
+                $ref: '#/components/schemas/ArticleList'
 components:
   schemas:
     ArticleList:
       type: array
       items:
-        $ref: "#/components/schema/Article"
+        $ref: '#/components/schema/Article'
     Article:
       required:
         - id
