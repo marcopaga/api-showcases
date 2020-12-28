@@ -1,0 +1,4 @@
+title: ArticleList
+type: array
+items:
+  $ref: ./Article.v1.yaml

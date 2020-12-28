@@ -1,0 +1,21 @@
+title: Article
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  title:
+    type: string
+  date:
+    type: string
+    format: date
+  description:
+    type: string
+  imageUrl:
+    type: string
+required:
+  - id
+  - title
+  - date
+  - description
+  - imageUrl

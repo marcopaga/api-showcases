@@ -9,16 +9,17 @@ info:
     url: 'http://www.codecentric.de'
     email: daniel.kocot@codecentric.de
   license:
-    name: Apache 2.0
+    name: MIT
   description: An API to provide news
+tags:
+  - name: news
 paths:
   /news:
-    summary: Get list of latest gaming news
     get:
-      tags:
-        - News
-      summary: Get list of latest gaming news
+      description: gets latest news      
       operationId: getNews
+      tags:
+        - news
       responses:
         '200':
           description: Expected response to a valid request
@@ -29,16 +30,13 @@ paths:
 components:
   schemas:
     ArticleList:
+      title: ArticleList
       type: array
       items:
-        $ref: '#/components/schema/Article'
+        $ref: '#/components/schemas/Article'
     Article:
-      required:
-        - id
-        - title
-        - date
-        - description
-        - imageUrl
+      title: Article
+      type: object
       properties:
         id:
           type: string
@@ -52,3 +50,10 @@ components:
           type: string
         imageUrl:
           type: string
+      required:
+      - id
+      - title
+      - date
+      - description
+      - imageUrl
+
