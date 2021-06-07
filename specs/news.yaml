@@ -10,6 +10,7 @@ info:
     email: daniel.kocot@codecentric.de
   license:
     name: MIT
+    url: https://www.tldrelgal.com/mit
   description: An API to provide news
 tags:
   - name: news
@@ -27,6 +28,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ArticleList'
+              examples: {}
 components:
   schemas:
     ArticleList:
@@ -57,3 +59,13 @@ components:
         - description
         - imageUrl
   securitySchemes: {}
+  examples:
+    news:
+      value:
+        description: Example shared example
+        type: object
+        properties:
+          id:
+            type: string
+        required:
+          - id
