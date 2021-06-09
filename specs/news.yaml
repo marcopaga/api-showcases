@@ -43,7 +43,7 @@ components:
       type: object
       properties:
         id:
-          x-java-field-annotations:
+          x-java-field-annotation:
             - "@Id"
             - "@GeneratedValue(strategy = GenerationType.IDENTITY)"
           type: string
