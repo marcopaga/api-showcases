@@ -37,10 +37,15 @@ components:
       items:
         $ref: '#/components/schemas/Article'
     Article:
+      x-java-class-annotation:
+        - "@javax.persistence.Entity"
       title: Article
       type: object
       properties:
         id:
+          x-java-field-annotations:
+            - "@Id"
+            - "@GeneratedValue(strategy = GenerationType.IDENTITY)"
           type: string
           format: uuid
         title:
