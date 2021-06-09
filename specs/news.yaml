@@ -44,8 +44,8 @@ components:
       properties:
         id:
           x-java-field-annotation:
-            - "@Id"
-            - "@GeneratedValue(strategy = GenerationType.IDENTITY)"
+            - "@javax.persistence.Id"
+            - "@javax.persistence.GeneratedValue(strategy = GenerationType.IDENTITY)"
           type: string
           format: uuid
         title:
