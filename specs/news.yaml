@@ -40,6 +40,7 @@ components:
       x-java-class-annotation:
         - "@javax.persistence.Entity"
       title: Article
+      description: A article is a part of a news.
       type: object
       properties:
         id:
