@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.0
 servers:
   - url: 'http://localhost:8080/api'
 info:
@@ -10,7 +10,7 @@ info:
     email: daniel.kocot@codecentric.de
   license:
     name: MIT
-    url: https://www.tldrelgal.com/mit
+    url: 'https://www.tldrelgal.com/mit'
   description: An API to provide news
 tags:
   - name: news
@@ -35,6 +35,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      parameters: []
+      summary: ''
 components:
   schemas:
     ArticleList:
@@ -43,16 +45,11 @@ components:
       items:
         $ref: '#/components/schemas/Article'
     Article:
-      x-java-class-annotation:
-        - "@javax.persistence.Entity"
       title: Article
       description: A article is a part of a news.
       type: object
       properties:
         id:
-          x-java-field-annotation:
-            - "@javax.persistence.Id"
-            - "@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)"
           type: integer
         title:
           type: string
@@ -70,15 +67,15 @@ components:
         - description
         - imageUrl
     Error:
-        type: object
-        properties:
-          code:
-            type: string
-          messages:
-            type: string
-        required:
-          - code
-          - message
+      type: object
+      properties:
+        code:
+          type: string
+        messages:
+          type: string
+      required:
+        - code
+        - message
   securitySchemes: {}
   examples:
     news:
