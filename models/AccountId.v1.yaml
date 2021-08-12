@@ -1,0 +1,9 @@
+AccountId:
+  required:
+    - id
+  type: object
+  properties:
+    id:
+      type: integer
+      description: Unique account ID
+      format: int64
