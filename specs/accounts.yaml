@@ -118,14 +118,7 @@ components:
         message:
           type: string
     AccountId:
-      required:
-        - id
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Unique account ID
-          format: int64
+      $ref: '../models/AccountId.v1.yaml'
     AccountProperties:
       required:
         - name
@@ -208,3 +201,4 @@ components:
         type: integer
         format: int32
         default: 100
+
